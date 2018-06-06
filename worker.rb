@@ -12,18 +12,18 @@ end
 class Worker 
 	include Sidekiq::Worker
 	 
-	=begin
-		Não é uma boa prática passar um objeto como parâmetro
-		visto que ele será serializado no processo de transferência
-		def perform(client, count=0)
-	    	sleep count
-	    	puts 'end process'
-	  	end
+	# =begin
+	# 	Não é uma boa prática passar um objeto como parâmetro
+	# 	visto que ele será serializado no processo de transferência
+	# 	def perform(client, count=0)
+	#     	sleep count
+	#     	puts 'end process'
+	#   	end
 
-	  	def self.show_informations(client)
-	  		puts "cliente nome #{client.name}"
-	  	end
-  	=end
+	#   	def self.show_informations(client)
+	#   		puts "cliente nome #{client.name}"
+	#   	end
+	#  	=end
 
   	def perform(name, count=0)
   		puts name
