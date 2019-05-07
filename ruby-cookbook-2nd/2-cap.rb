@@ -58,3 +58,27 @@ OPA
 POEMA
 
 puts string
+
+# Templates ERB
+# %q{} mesmo que aspas simples e Q são as duplas
+
+require 'erb'
+
+template = %q{
+  <% if problemas.empty? %>
+    Não tem erros
+  <% else %>
+    erros
+    <% problemas.each do |problema, linha| %>
+      <%= problema %> linha <%= linha %>
+    <% end %>
+  <% end %>
+}
+
+puts template
+puts template.gsub /^\s+/, ''
+
+template = ERB.new template, nil, '<>'
+problemas = [['error had', 2], ['error easy', 4]]
+
+template.run(binding)
