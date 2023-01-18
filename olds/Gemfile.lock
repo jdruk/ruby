@@ -4,7 +4,7 @@ GEM
     concurrent-ruby (1.0.5)
     connection_pool (2.2.2)
     mustermann (1.0.2)
-    rack (2.1.4)
+    rack (2.1.4.2)
     rack-protection (2.0.2)
       rack
     redis (4.0.1)
